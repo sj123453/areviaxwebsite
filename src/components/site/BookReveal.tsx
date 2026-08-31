@@ -49,7 +49,7 @@ export function BookReveal({ product }: { product: BookProduct }) {
             transformStyle: "preserve-3d",
             transform: inView
               ? "translateX(0) rotateX(8deg)"
-              : "translateX(24%) rotateX(14deg)",
+              : "translateX(19%) rotateX(14deg)",
             transition: "transform 1400ms var(--ease-temple)",
           }}
         >
@@ -170,9 +170,10 @@ function Page({
 }) {
   return (
     <div
-      className={`absolute inset-y-0 flex w-1/2 flex-col p-6 sm:p-7 ${
-        side === "right" ? "right-0 rounded-r-md" : "left-0 rounded-l-md"
+      className={`absolute inset-y-0 flex flex-col p-4 sm:p-7 ${
+        side === "right" ? "right-0 w-1/2 rounded-r-md" : "inset-0 w-full rounded-l-md"
       }`}
+
       style={{
         background:
           "linear-gradient(180deg, oklch(0.96 0.012 88), oklch(0.91 0.016 86))",
