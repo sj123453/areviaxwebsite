@@ -49,7 +49,7 @@ export function BookReveal({ product }: { product: BookProduct }) {
             transformStyle: "preserve-3d",
             transform: inView
               ? "translateX(0) rotateX(8deg)"
-              : "translateX(19%) rotateX(14deg)",
+              : "translateX(-19%) rotateX(14deg)",
             transition: "transform 1400ms var(--ease-temple)",
           }}
         >
@@ -74,7 +74,7 @@ export function BookReveal({ product }: { product: BookProduct }) {
 
           {/* cover: flips open to become the left interior page */}
           <div
-            className="absolute inset-y-0 left-0 w-1/2"
+            className="absolute inset-y-0 right-0 w-1/2"
             style={{
               transformStyle: "preserve-3d",
               transformOrigin: "left center",
