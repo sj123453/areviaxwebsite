@@ -114,13 +114,28 @@ function Home() {
       <Hero />
       <Marquee />
       <Vault />
+      <GreekDivider />
       <Proof />
       <Testimonials />
+      <GreekDivider />
       <FinalCta />
       <Footer />
     </div>
   );
 }
+
+function GreekDivider() {
+  return (
+    <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-6 py-2">
+      <span aria-hidden className="meander h-1.5 flex-1" />
+      <span aria-hidden className="font-display text-base text-primary">
+        ⚚
+      </span>
+      <span aria-hidden className="meander h-1.5 flex-1" />
+    </div>
+  );
+}
+
 
 function Nav() {
   return (
