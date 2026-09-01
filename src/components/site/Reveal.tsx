@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export function useInView<T extends HTMLElement>(threshold = 0.35) {
+export function useInView<T extends HTMLElement>(threshold = 0.35, once = true) {
   const ref = useRef<T | null>(null);
   const [inView, setInView] = useState(false);
 
@@ -11,16 +11,18 @@ export function useInView<T extends HTMLElement>(threshold = 0.35) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) setInView(true);
+          else if (!once) setInView(false);
         });
       },
       { threshold, rootMargin: "0px 0px -10% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [threshold, once]);
 
   return { ref, inView };
 }
+
 
 export function Reveal({
   children,

@@ -114,13 +114,28 @@ function Home() {
       <Hero />
       <Marquee />
       <Vault />
+      <GreekDivider />
       <Proof />
       <Testimonials />
+      <GreekDivider />
       <FinalCta />
       <Footer />
     </div>
   );
 }
+
+function GreekDivider() {
+  return (
+    <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-6 py-2">
+      <span aria-hidden className="meander h-1.5 flex-1" />
+      <span aria-hidden className="font-display text-base text-primary">
+        ⚚
+      </span>
+      <span aria-hidden className="meander h-1.5 flex-1" />
+    </div>
+  );
+}
+
 
 function Nav() {
   return (
@@ -178,6 +193,27 @@ function Hero() {
             "radial-gradient(80% 55% at 50% 22%, oklch(0.68 0.19 44 / 22%), transparent 70%), linear-gradient(180deg, transparent 55%, var(--color-background) 96%)",
         }}
       />
+      {/* fluted temple columns */}
+      {[
+        "left-[-2%] sm:left-[4%]",
+        "right-[-2%] sm:right-[4%]",
+      ].map((pos) => (
+        <div
+          key={pos}
+          aria-hidden
+          className={`pointer-events-none absolute top-0 -z-10 h-[70%] w-16 opacity-25 sm:w-24 ${pos}`}
+          style={{
+            background:
+              "repeating-linear-gradient(90deg, oklch(0.86 0.012 85 / 26%) 0 3px, transparent 3px 11px)",
+            maskImage:
+              "linear-gradient(180deg, transparent, black 18%, black 55%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, transparent, black 18%, black 55%, transparent)",
+          }}
+        />
+      ))}
+
+
 
       <div className="mx-auto max-w-3xl px-6 text-center">
         <div className="relative mx-auto mb-10 h-52 w-52 sm:h-64 sm:w-64">
