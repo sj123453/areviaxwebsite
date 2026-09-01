@@ -193,6 +193,31 @@ function Hero() {
             "radial-gradient(80% 55% at 50% 22%, oklch(0.68 0.19 44 / 22%), transparent 70%), linear-gradient(180deg, transparent 55%, var(--color-background) 96%)",
         }}
       />
+      {/* fluted temple columns */}
+      {[
+        "left-[-2%] sm:left-[4%]",
+        "right-[-2%] sm:right-[4%]",
+      ].map((pos) => (
+        <div
+          key={pos}
+          aria-hidden
+          className={`pointer-events-none absolute top-0 -z-10 h-[70%] w-16 opacity-25 sm:w-24 ${pos}`}
+          style={{
+            background:
+              "repeating-linear-gradient(90deg, oklch(0.86 0.012 85 / 26%) 0 3px, transparent 3px 11px)",
+            maskImage:
+              "linear-gradient(180deg, transparent, black 18%, black 55%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, transparent, black 18%, black 55%, transparent)",
+          }}
+        />
+      ))}
+      <span
+        aria-hidden
+        className="meander absolute inset-x-0 top-20 -z-10 h-2 opacity-30"
+      />
+
+
 
       <div className="mx-auto max-w-3xl px-6 text-center">
         <div className="relative mx-auto mb-10 h-52 w-52 sm:h-64 sm:w-64">
