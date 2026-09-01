@@ -212,10 +212,6 @@ function Hero() {
           }}
         />
       ))}
-      <span
-        aria-hidden
-        className="meander absolute inset-x-0 top-20 -z-10 h-2 opacity-30"
-      />
 
 
 

@@ -84,7 +84,7 @@ export function BookReveal({ product }: { product: BookProduct }) {
             <h4 className="mt-2 font-display text-base font-bold leading-tight text-ink sm:text-xl">
               {product.headline}
             </h4>
-            <p className="mt-2 text-[0.68rem] leading-relaxed text-ink/70 sm:text-sm">
+            <p className="mt-2 line-clamp-5 text-[0.68rem] leading-relaxed text-ink/70 sm:line-clamp-none sm:text-sm">
               {product.blurb}
             </p>
             <div className="mt-auto flex items-center gap-2 border-t border-ink/15 pt-2 text-[0.72rem] font-semibold text-ink sm:text-sm">
@@ -99,7 +99,9 @@ export function BookReveal({ product }: { product: BookProduct }) {
             style={{
               transformStyle: "preserve-3d",
               transformOrigin: "left center",
-              transform: inView ? "rotateY(-176deg)" : "rotateY(-2deg)",
+              transform: inView
+                ? "translateZ(-6px) rotateY(-168deg)"
+                : "translateZ(-6px) rotateY(-2deg)",
               transition: "transform 1600ms var(--ease-temple) 90ms",
             }}
           >
